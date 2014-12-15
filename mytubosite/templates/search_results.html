@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Resultados{% endblock %}
+
+{% block content %}
+<h2>Resultados:</h2>
+
+<h3>Necesitan...</h3>
+<ol>
+{% for object in trabn_list %}
+    {% if forloop.first %}
+        <li class="first">
+    {% else %}
+        <li>
+    {% endif %}
+    <a href="{% url 'view_trabn' pk=object.id%}"> {{ object }}</a>
+    </li>
+{% endfor %}
+</ol>
+
+<h3>Ofrecen...</h3>
+<ol>
+{% for object in trabo_list %}
+    {% if forloop.first %}
+        <li class="first">
+    {% else %}
+        <li>
+    {% endif %}
+    <a href="{% url 'view_trabo' pk=object.id%}"> {{ object }}</a>
+    </li>
+{% endfor %}
+</ol>
+
+{% endblock %}

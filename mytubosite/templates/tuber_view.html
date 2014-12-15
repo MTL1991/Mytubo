@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil de {{ tuber.user.username }}{% endblock %}
+
+{% block content %}
+<h2>Perfil de {{ tuber.user.username }}</h2>
+<p>e-mail: {{ tuber.user.email }}</p>
+
+{% if tubo_list%}
+<p>Videos:<p>
+
+<ol>
+{% for object in tubo_list %}
+    {% if forloop.first %}
+        <li class="first">
+    {% else %}
+        <li>
+    {% endif %}
+    <a href="{% url 'view_tubo' pk=object.id%}"> {{ object }}</a>
+    {% if  tuber.user == user %}
+        <a href="{% url 'delete_tubo' pk=object.id  %}"> Borrar</a>
+    {% endif %}
+    </li>
+{% endfor %}
+</ol>
+
+<p>Registro: {{ tuber.user.date_joined }}</p>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+Nuevo Tuber
+{% endblock %}
+
+{% block content %}
+<h2>Nuevo tuber</h2>
+<form action="" method="post">
+    <table>
+        {{ form.as_table }}
+    </table>
+    {% csrf_token %}
+    <input type="submit" value="Enviar">
+</form>
+{% endblock %}

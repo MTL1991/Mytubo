@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tubo.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ tubo.title }}</h2>
+<p>Tuber:
+    <a href="{% url 'profile_tuber' tubo.tuber.user.id%}">
+        {{ tubo.tuber }}
+    </a>
+</p>
+<p>Descripción: {{ tubo.description }}</p>
+  <p> <video id="video" controls>
+  <source src="videos/movie.mp4" type="video/mp4">
+  <source src="videos/movie.ogv" type="video/ogg">
+  Your browser does not support the video tag.
+    </video> </p>
+<p></p>
+
+<p>Editado por última vez:
+    {{ tubo.last_editing_date }}</p>
+
+
+
+{% endblock %}
