@@ -107,4 +107,4 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
 )
 
-MEDIA_ROOT = '/home/manuel/ETSIT/CDPS/P7/gotrab/mytubosite/videos'
+MEDIA_ROOT = '/home/manuel/ETSIT/CDPS/P7/mytubo/mytubosite/videos/'
